@@ -57,11 +57,11 @@ while True:
         command = " ".join(command.split()[start + 1 :]).lower()
         print(command)
         # Tasks
-        if checkKeywordsInCommand(command, ["what" "time"]):
+        if checkKeywordsInCommand(command, ["what", "time"]):
             now = datetime.now()
             current_time = now.strftime("%H:%M")
             speak("It's " + current_time)
 
-        if "random number" in command:
+        if checkKeywordsInCommand(command, ["random", "number"]):
             randInt = random.randint(0, 10)
             speak("A random number between 0 and 10 is " + str(randInt))
